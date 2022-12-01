@@ -1,0 +1,44 @@
+const data = [
+    {
+        id:1,
+        PrimaryName:"தமிழ்",
+        secondaryName:"Tamil"
+    },
+    { 
+        id:2,
+        PrimaryName:"தெலுங்கு",
+        secondaryName:"telugu"
+    },
+    {
+        id:3,
+        PrimaryName:"மலையாளம்",
+        secondaryName:"malayalam"
+    },
+    {
+        id:4,
+        PrimaryName:"மராத்தி",
+        secondaryName:"Marathi"
+    },
+    {
+        id:5,
+        PrimaryName:"हिन्दी",
+        secondaryName:"Hindi"
+    },
+    {
+        id:6,
+        PrimaryName:"English",
+        secondaryName:"English"
+    },
+    {
+        id:7,
+        PrimaryName:"বাঙালি",
+        secondaryName:"Bangali"
+    },
+    {
+        id:8,
+        PrimaryName:"কন্নড়",
+        secondaryName:"kannada"
+    }
+]
+
+export default data

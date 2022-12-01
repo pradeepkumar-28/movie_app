@@ -1,0 +1,4 @@
+@mixin cardLayout($width: 345px, $height: 220px) {
+    width: $width !important;
+    height: $height !important;
+}

@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: $theme-bgColor;
+    font-family: $theme-font;
+}
+
+.Tranding_Grid {
+    overflow: auto;
+    white-space: nowrap;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.Movie_Container {
+    margin-left: 1.875rem;
+    margin-top: 1.875rem;
+    .section_Title {
+        color: $theme-HeadingColor;
+        font-size: 1.5rem;
+        letter-spacing: 0.063rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.movieTitle {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+}
+
+// langauge Page scss
+.langauge_Box {
+    display: inline-block;
+    cursor: pointer;
+    height: 9rem;
+    margin: 9px;
+    width: 10rem;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #F36265 0%, #961276 100%);
+    .langauge {
+        text-transform: uppercase;
+        width: 100%;
+        text-align: center;
+        height: 100%;
+        margin-top: 25%;
+    }
+}
+.ExtraMovies_section{
+    display: block;
+
+}
+
+.test{
+    position: relative;
+    margin-left: 1.875rem;
+    margin-top: 1.875rem;
+    .section_Title {
+        color: $theme-HeadingColor;
+        font-size: 1.5rem;
+        letter-spacing: 0.063rem;
+        margin-bottom: 1rem;
+    }
+}
