@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import getMovies from "../../redux/actions/Movies";
 import Card from "../../component/Card";
 
-function ExtraMovies({cardActive, activeCardIndex, tabId, setCardRef}) {
+function ExtraMovieBottomLayout({cardActive, activeCardIndex, tabId, setCardRef}) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getMovies());
@@ -13,10 +13,10 @@ function ExtraMovies({cardActive, activeCardIndex, tabId, setCardRef}) {
   } = useSelector((state) => state?.MoviesReducers);
 
   const smallLandscapeLayoutData = trays?.filter(
-    (data) => data.layout === "SMALL_LANDSCAPE_LAYOUT"
+    (data) => data.layout === "SQUARE_LAYOUT"
   )[0];
 
-
+ 
 
   const selectActiveIndex = (index) => {
     cardActive(index)
@@ -25,7 +25,7 @@ function ExtraMovies({cardActive, activeCardIndex, tabId, setCardRef}) {
   return (
     <div className="Movie_Container tranding">
       <h1 className="section_Title">
-        Extra Movies
+       Old Movies
       </h1>
       <div className="Tranding_Grid">
         {smallLandscapeLayoutData?.items?.map((itemData, index) => {
@@ -37,7 +37,7 @@ function ExtraMovies({cardActive, activeCardIndex, tabId, setCardRef}) {
               setCardRef={(cardRef)=>setCardRef(index, cardRef)}
               title={title}
               img={images?.landscape}
-              style={activeCardIndex === index && tabId === 2 ? "active" : "nonActic_card"}
+              style={activeCardIndex === index && tabId === 3 ? "active" : "nonActic_card"}
             />
           );
         })}
@@ -46,4 +46,4 @@ function ExtraMovies({cardActive, activeCardIndex, tabId, setCardRef}) {
   );
 }
 
-export default ExtraMovies;
+export default ExtraMovieBottomLayout;

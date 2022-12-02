@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../../component/Card";
 import { useDispatch, useSelector } from "react-redux";
 import getMovies from "../../redux/actions/Movies";
 
-function OriginalMovies() {
+function OriginalMovies({cardActive, activeCardIndex, tabId,setCardRef}) {
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(getMovies());
   }, []);
@@ -18,14 +17,26 @@ function OriginalMovies() {
     (data) => data.layout === "PORTRAIT_LAYOUT"
   )[0];
 
+  
+
+  const selectActiveIndex = (index) => {
+    cardActive(index)
+  };
+
   return (
     <div className="Movie_Container originalMovie">
       <h1 className="section_Title">Heart Warming Originals</h1>
       <div className="Tranding_Grid">
-        {portraitLayout?.items?.map((val) => {
+        {portraitLayout?.items?.map((val, index) => {
           const { id, images } = val;
           return (
-            <Card key={id} img={images?.landscape} style="OriginalMovie_card" />
+            <Card
+              key={id}
+              setCardRef={(cardRef)=>setCardRef(index, cardRef)}
+              onCardHandler={() => selectActiveIndex(index)}
+              img={images?.landscape}
+              style={activeCardIndex === index && tabId === 1 ? "active" : "nonActic_card"}
+            />
           );
         })}
       </div>
