@@ -36,12 +36,23 @@ function App() {
 
       // top arrow
     } else if (order === 38) {
-
+      const tempTabId = tabid ===0 ?0:tabid - 1
+      cardItemRef[tempTabId][activeIndex].scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+        inline: "center",
+      });
       setTabId((lastId) => {
         return lastId === 0 ? 0 : lastId - 1;
       });
       // down arrow
     } else if (order === 40) {
+      const tempTabId = tabid === 0 ? tabid + 1 : 0 || tabId === 1 ? tabid + 1 : 0;
+      cardItemRef[tempTabId][activeIndex].scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+        inline: "center",
+      });
       setTabId((lastId) => {
         return lastId === 0 ? lastId + 1 : 0 || tabId === 1 ? lastId + 1 : 0;
       });
